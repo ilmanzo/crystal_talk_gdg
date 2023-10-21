@@ -1,0 +1,82 @@
+
+coding: from complex to simple
+
+start simple today
+
+nil
+
+x = nil
+
+x = "hello conf"
+(x is now a string)
+
+TYPES
+x was of Nil type
+x now is of String type
+
+
+if rand > 0.5
+  x = nil
+else
+  x = "hello conf"
+end
+
+type of x = ? 
+String? shorthand for "String | Nil"
+
+
+"foo".upcase => "FOO"
+
+"foo".does_not_exist (at runtime -> BOOM)
+Error at compile time.. safe!
+
+now what about 
+
+if rand > 0.5
+ x = "foo"
+else
+ x = 42
+end
+
+x.upcase 
+# deal with complexity, support human errors
+
+Error: undefined method 'upcase' for Int32
+compile time x is (Int|String)
+
+if rand > 0.5
+ x = "foo"
+ x.upcase
+else
+ x = 42
+ x *= 3
+end
+
+# this is fine
+
+
+# we have objects
+class Foo
+end
+
+class Foo < Bar
+end
+
+class Foo
+ include Bar
+end
+
+
+class Foo
+  # local instance only
+  @instance_var : String
+
+  # shared between all Foo's
+  @@class_var : Bool
+end
+
+
+
+
+
+

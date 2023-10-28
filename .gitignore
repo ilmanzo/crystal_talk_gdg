@@ -1,2 +1,4 @@
 docs/*.pdf
 
+src/benchmark/fibonacci_cr
+src/benchmark/fibonacci_go

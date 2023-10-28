@@ -32,7 +32,7 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 
 - Open Source enthusiast && contributor
 - Knowledge sharing
-- Crystal [Ambassador](https://forum.crystal-lang.org/t/ambassador-introductions/5734)
+- volunteer Crystal [Ambassador](https://forum.crystal-lang.org/t/ambassador-introductions/5734)
 
 ---
 # Crystal is ...
@@ -40,14 +40,15 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 ## A language for Humans
 
 - clean code
-- avoid dependency hell
+- batteries included
 - avoid surprise fail
-- avoid bureaucracy
+- no *bureaucracy*
 
 ---
-### Clean Code
+### say Hello 3 times
 
-C 
+once upon a C  ...
+
 ```C
 int i = 0
 while(i < 3) {
@@ -56,17 +57,6 @@ while(i < 3) {
 ```
 ...😵
 
----
-### Clean Code
-
-C 
-```C
-int i = 0
-while(i < 3) {
-  printf("Hello\n");
-  i++;
-}
-```
 
 can you spot the error ?
 
@@ -74,7 +64,30 @@ can you spot the error ?
 ---
 ### Clean Code
 
-Crystal is expressive
+
+```main.c:5:1: error: expected ‘,’ or ‘;’ before ‘while’```
+
+```C
+int i = 0;
+while(i < 3) {
+  printf("Hello\n");
+}
+```
+ops I did it again ...😵
+
+
+---
+## say Hello 3 times
+
+```C
+int i = 0;
+while(i < 3) {
+  printf("Hello\n");
+  i++;
+}
+```
+
+Crystal is designed to be... Crystalline
 
 ```Crystal
 3.times do
@@ -82,7 +95,27 @@ Crystal is expressive
 end
 ```
 
-everything is an object!
+---
+##
+
+![](img/martin_fowler.png)
+
+from *Refactoring: Improving the Design of Existing Code, 1999.*
+
+<!-- _footer: "" -->
+
+---
+## Clean Code focuses on problem, not on solution
+
+*"Clean Code tells a story of the problem it solves. If your namings contain a lot of technical jargon, then it’s probably focusing on HOW. Clean Code focuses on WHAT. Technical names such as DTOs, flags, and records are all related to specific solutions on the computer. They are code smells telling that your code focuses on a solution space. Instead, you should write code that speaks about the problem."*
+
+from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
+
+---
+## 
+
+![bg center 70%](img/daniel_moka_tweet.jpg)
+
 
 ---
 #### Batteries included
@@ -108,7 +141,7 @@ HttpHello.start
 <!-- _footer: "" -->
 ---
 ## Humans like their program to not fail
-Avoid [the billion dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
+Or: avoid [the billion dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 
 ```Crystal
 class Duck
@@ -164,13 +197,71 @@ shhh 🤫
     - easy to deploy
 
 ---
-## performance
+### performance
+```ruby
+def fibonacci(n)
+  return n if n < 2
+  fibonacci(n - 1) + fibonacci(n - 2)
+end
 
-
-[benchmarks](https://github.com/kostya/crystal-benchmarks-game)
+puts fibonacci(47)
+```
+```
+$ /usr/bin/time -v ruby fibonacci.rb                                             
+2971215073
+       	Command being timed: "ruby fibonacci.rb"
+       	User time (seconds): 178.38
+       	System time (seconds): 0.01
+       	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:58.39
+  ---> 	Maximum resident set size (kbytes): 23296 <---
+       	Average resident set size (kbytes): 0
+       	Major (requiring I/O) page faults: 0
+       	Minor (reclaiming a frame) page faults: 4629
+```
 
 ---
 ## low resource usage
+```crystal
+def fibonacci(n : UInt32)
+  return n if n < 2
+  fibonacci(n - 1) + fibonacci(n - 2)
+end
+
+puts fibonacci(47)
+```
+```
+ /usr/bin/time -v ./fibonacci_cr 
+        User time (seconds): 8.39
+        System time (seconds): 0.00
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.39
+  --->  Maximum resident set size (kbytes): 3328  <---
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 296        
+```
+
+
+---
+### Crystal vs Go
+
+```bash
+$ hyperfine --export-markdown table.md ./fibonacci_*
+```
+
+| Command | Mean [s] | Min [s] | Max [s] | Relative |
+|:---|---:|---:|---:|---:|
+| `./fibonacci_go` | 11.166 ± 0.082 | 11.013 | 11.255 | 1.31 ± 0.01 |
+| `./fibonacci_cr` | 8.500 ± 0.050 | 8.459 | 8.600 | 1.00 |
+
+see also [benchmarks I](https://github.com/kostya/crystal-benchmarks-game) - [benchmarks II](https://ptimofeev.com/go-vs-crystal-perfomance/)
+
+```bash
+$ ls -lh fibonacci_*
+-rwxr-xr-x 1 andrea andrea 405K Oct 28 10:45 fibonacci_cr
+-rwxr-xr-x 1 andrea andrea 1.2M Oct 28 10:15 fibonacci_go
+```
+
+Note: Distrust benchmarks!
 
 
 ---
@@ -194,13 +285,13 @@ shhh 🤫
 
 
 ---
-# One more thing
+# "One" more thing
 
-- Crystal is built on [Open Build Service](https://build.opensuse.org/package/show/devel:languages:crystal/crystal)
+- Crystal is built on openSUSE's [Open Build Service](https://build.opensuse.org/package/show/devel:languages:crystal/crystal)
 
 - Shameless plug: [Crystal koans](https://github.com/ilmanzo/crystal-koans)
 
-- [Nim Italia](https://nim-italia.github.io/)
+- check out also [Nim Italia](https://nim-italia.github.io/)
 
 ---
 # Thanks

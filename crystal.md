@@ -2,21 +2,24 @@
 paginate: true
 marp: true
 footer: Andrea Manzini @ GdG Trento
-theme: default
-#class: lead 
+theme: gaia
+class: lead 
 
 
 ---
-![bg left](img/crystal_logo-stacked_version.svg)
+![bg left](img/spin_logo.webp)
 
 ## Andrea Manzini
 
-## *A language for humans and computers*
+### *A language for humans and computers*
 
 #### 11/11/2023 
 ### `DevFest Trento`
+<!-- paginate: false -->
 
 ---
+<!-- paginate: true -->
+
 ## Short bio 
 
 - Who am I ? ➡️ https://ilmanzo.github.io 
@@ -32,7 +35,9 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 
 - Open Source enthusiast && contributor
 - Knowledge sharing
-- volunteer Crystal [Ambassador](https://forum.crystal-lang.org/t/ambassador-introductions/5734)
+- Crystal [Ambassador](https://forum.crystal-lang.org/t/ambassador-introductions/5734)
+
+![bg right](img/why_not_pexels-photo-12347774.webp)
 
 ---
 # Crystal is ...
@@ -45,7 +50,7 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 - no *bureaucracy*
 
 ---
-### say Hello 3 times
+### task: print 'Hello' 3 times
 
 once upon a C  ...
 
@@ -55,10 +60,7 @@ while(i < 3) {
   printf("Hello\n");
 }
 ```
-...😵
-
-
-can you spot the error ?
+😵 ... can you spot the error ?
 
 
 ---
@@ -73,11 +75,11 @@ while(i < 3) {
   printf("Hello\n");
 }
 ```
-ops I did it again ...😵
+ops, I did it again ...😵
 
 
 ---
-## say Hello 3 times
+### task: print 'Hello' 3 times
 
 ```C
 int i = 0;
@@ -87,7 +89,7 @@ while(i < 3) {
 }
 ```
 
-Crystal is designed to be... Crystalline
+Crystal is designed to be... Clear
 
 ```Crystal
 3.times do
@@ -98,11 +100,10 @@ end
 ---
 ##
 
-![](img/martin_fowler.png)
+![bg 80%](img/martin_fowler.png)
 
-from *Refactoring: Improving the Design of Existing Code, 1999.*
 
-<!-- _footer: "" -->
+<!-- _footer: "from *Refactoring: Improving the Design of Existing Code, 1999.*" -->
 
 ---
 ## Clean Code focuses on problem, not on solution
@@ -204,7 +205,7 @@ def fibonacci(n)
   fibonacci(n - 1) + fibonacci(n - 2)
 end
 
-puts fibonacci(47)
+puts fibonacci(42)
 ```
 ```
 $ /usr/bin/time -v ruby fibonacci.rb                                             
@@ -218,7 +219,7 @@ $ /usr/bin/time -v ruby fibonacci.rb
        	Major (requiring I/O) page faults: 0
        	Minor (reclaiming a frame) page faults: 4629
 ```
-
+<!-- _footer: "" -->
 ---
 ## low resource usage
 ```crystal
@@ -239,10 +240,9 @@ puts fibonacci(47)
         Major (requiring I/O) page faults: 0
         Minor (reclaiming a frame) page faults: 296        
 ```
-
-
+<!-- _footer: "" -->
 ---
-### Crystal vs Go
+### Go, Crystal
 
 ```bash
 $ hyperfine --export-markdown table.md ./fibonacci_*
@@ -261,27 +261,36 @@ $ ls -lh fibonacci_*
 -rwxr-xr-x 1 andrea andrea 1.2M Oct 28 10:15 fibonacci_go
 ```
 
-Note: Distrust benchmarks!
-
-
----
-## cross platform
-
+Note: **Distrust benchmarks!**
 
 ---
-## easy to deploy
+### Computers like many operating systems
 
+Crystal is [cross platform](https://crystal-lang.org/install/):
+- MacOs
+- Linux
+- FreeBSD
+- OpenBSD
+- Windows
+- Android
+
+![bg right](img/food_buffet_pexels-photo-14048846.jpeg)
+
+Cross compilation ? [YES!](https://crystal-lang.org/reference/1.10/syntax_and_semantics/cross-compilation.html)
+
+<!-- _footer: "" -->
 
 ---
 # Some extras
 
-- "Go style" Human friendly concurrency via CSP
-- Doc generation
-- Integrated test framework
-- Macros
+- "Go style" Human friendly [concurrency](https://crystal-lang.org/reference/latest/guides/concurrency.html) via CSP
+- Code [documentation](https://crystal-lang.org/reference/latest/syntax_and_semantics/documenting_code.html) generation
+- Integrated [test](https://crystal-lang.org/reference/latest/guides/testing.html) framework
+- Metaprogramming via [macros](https://crystal-lang.org/reference/latest/syntax_and_semantics/macros/index.html)
 - Shards: dependency manager
 - C-binding without tears
-- an extensive, modern standard library  
+- an extensive, modern standard library
+ 
 
 
 ---
@@ -293,12 +302,25 @@ Note: Distrust benchmarks!
 
 - check out also [Nim Italia](https://nim-italia.github.io/)
 
+
 ---
+![bg right 100%](img/crystal_mascot.webp)
+
 # Thanks
 
+## Andrea Manzini
+
+## *A language for humans and computers*
+
+#### 11/11/2023 
+### `DevFest Trento`
 
 
+---
+## Photo Credits
 
+- Slide 3: [Ann H](https://www.pexels.com/@ann-h-45017/)
+- Slide 19: [Jonathan Borba](https://www.pexels.com/@jonathanborba/)
 
 
 

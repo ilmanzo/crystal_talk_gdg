@@ -42,12 +42,12 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 ---
 # Crystal is ...
 
-## A language for Humans
+## A language for Humans 🧑
 
-- clean code
-- batteries included
-- avoid surprise fail
-- no *bureaucracy*
+- Clean code
+- Batteries included
+- Avoid surprise fail
+- No *bureaucracy*
 
 ---
 ### task: print 'Hello' 3 times
@@ -186,12 +186,12 @@ shhh 🤫
     - no need to write boilerplate types
     - duck typing and monkey patching
 
-- the community (check out CrystalConf!)
+- the community (we just had [CrystalConf!](https://crystal-lang.org/events/2023-crystal-berlin/))
 
 ---
 # A language for computers
 
-- computer like native code
+- Computer like native code! 🤖
     - performant execution
     - low memory footprint
     - cross-platform/os
@@ -205,7 +205,7 @@ def fibonacci(n)
   fibonacci(n - 1) + fibonacci(n - 2)
 end
 
-puts fibonacci(42)
+puts fibonacci(47)
 ```
 ```
 $ /usr/bin/time -v ruby fibonacci.rb                                             
@@ -223,7 +223,7 @@ $ /usr/bin/time -v ruby fibonacci.rb
 ---
 ## low resource usage
 ```crystal
-def fibonacci(n : UInt32)
+def fibonacci(n)
   return n if n < 2
   fibonacci(n - 1) + fibonacci(n - 2)
 end

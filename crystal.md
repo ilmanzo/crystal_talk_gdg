@@ -2,19 +2,21 @@
 paginate: true
 marp: true
 footer: Andrea Manzini @ GdG Trento
-theme: gaia
-class: lead 
+theme: uncover
+class: lead
 
 
 ---
 ![bg left](img/spin_logo.webp)
 
-## Andrea Manzini
+#### *A language for humans and computers*
 
-### *A language for humans and computers*
+*Andrea Manzini*
 
-#### 11/11/2023 
-### `DevFest Trento`
+**11/11/2023**
+
+`DevFest Trento`
+
 <!-- paginate: false -->
 
 ---
@@ -31,7 +33,7 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 
 <!-- _footer: "" -->
 ---
-# Why I'm here ?
+## Why I'm here ?
 
 - Open Source enthusiast && contributor
 - Knowledge sharing
@@ -50,7 +52,7 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 - No *bureaucracy*
 
 ---
-### task: print 'Hello' 3 times
+#### task: print 'Hello' 3 times
 
 once upon a C  ...
 
@@ -64,10 +66,9 @@ while(i < 3) {
 
 
 ---
-### Clean Code
+### Clean Code?
 
-
-```main.c:5:1: error: expected ‘,’ or ‘;’ before ‘while’```
+    main.c:5:1: error: expected ‘,’ or ‘;’ before ‘while’
 
 ```C
 int i = 0;
@@ -79,7 +80,7 @@ ops, I did it again ...😵
 
 
 ---
-### task: print 'Hello' 3 times
+#### task: print 'Hello' 3 times
 
 ```C
 int i = 0;
@@ -106,11 +107,17 @@ end
 <!-- _footer: "from *Refactoring: Improving the Design of Existing Code, 1999.*" -->
 
 ---
-## Clean Code focuses on problem, not on solution
 
-*"Clean Code tells a story of the problem it solves. If your namings contain a lot of technical jargon, then it’s probably focusing on HOW. Clean Code focuses on WHAT. Technical names such as DTOs, flags, and records are all related to specific solutions on the computer. They are code smells telling that your code focuses on a solution space. Instead, you should write code that speaks about the problem."*
+*"**Clean Code** tells a story of the problem it solves. If your namings contain a lot of technical jargon, then it’s probably focusing on HOW. Clean Code focuses on WHAT."*
+
+#### Clean Code focuses on problem, not on solution
 
 from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
+
+---
+
+*"Technical names such as DTOs, flags, and records are all related to specific solutions on the computer. They are code smells telling that your code focuses on a solution space. Instead, you should write code that speaks about the problem."*
+
 
 ---
 ## 
@@ -120,7 +127,7 @@ from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
 
 ---
 #### Batteries included
-```Crystal
+```crystal
 require "http/server"
 
 class HttpHello
@@ -141,7 +148,7 @@ HttpHello.start
 ```
 <!-- _footer: "" -->
 ---
-## Humans like their program to not fail
+### Humans like their program to not fail
 Or: avoid [the billion dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 
 ```Crystal
@@ -179,23 +186,23 @@ shhh 🤫
 
 ---
 # Summing up
-- pretty like Ruby
+- Pretty like Ruby
     - similar syntax, compatibility is not a goal
 - Safe: statically checked types
 - Has type inference
     - no need to write boilerplate types
     - duck typing and monkey patching
 
-- the community (we just had [CrystalConf!](https://crystal-lang.org/events/2023-crystal-berlin/))
+- The community (checkout [CrystalConf!](https://crystal-lang.org/events/2023-crystal-berlin/))
 
 ---
-# A language for computers
+## A language for computers
 
-- Computer like native code! 🤖
-    - performant execution
-    - low memory footprint
-    - cross-platform/os
-    - easy to deploy
+Computer like native code 🤖
+  - performant execution
+  - low memory footprint
+  - cross-platform/os
+  - easy to deploy
 
 ---
 ### performance
@@ -245,28 +252,38 @@ puts fibonacci(47)
 ### Go, Crystal
 
 ```bash
-$ hyperfine --export-markdown table.md ./fibonacci_*
-```
+$ hyperfine fibonacci_*
 
-| Command | Mean [s] | Min [s] | Max [s] | Relative |
-|:---|---:|---:|---:|---:|
-| `./fibonacci_go` | 11.166 ± 0.082 | 11.013 | 11.255 | 1.31 ± 0.01 |
-| `./fibonacci_cr` | 8.500 ± 0.050 | 8.459 | 8.600 | 1.00 |
+Benchmark 1: ./fibonacci_cr
+  Time (mean ± σ):      8.563 s ±  0.081 s
+  Range (min … max):    8.464 s …  8.702 s
+ 
+Benchmark 2: ./fibonacci_go
+  Time (mean ± σ):     11.376 s ±  0.176 s
+  Range (min … max):   11.172 s … 11.755 s
+ 
+Summary
+  ./fibonacci_cr ran
+    1.33 ± 0.02 times faster than ./fibonacci_go
+```    
 
-see also [benchmarks I](https://github.com/kostya/crystal-benchmarks-game) - [benchmarks II](https://ptimofeev.com/go-vs-crystal-perfomance/)
+---
 
 ```bash
 $ ls -lh fibonacci_*
 -rwxr-xr-x 1 andrea andrea 405K Oct 28 10:45 fibonacci_cr
 -rwxr-xr-x 1 andrea andrea 1.2M Oct 28 10:15 fibonacci_go
 ```
+see also [benchmarks I](https://github.com/kostya/crystal-benchmarks-game) - [benchmarks II](https://ptimofeev.com/go-vs-crystal-perfomance/)
+
 
 Note: **Distrust benchmarks!**
 
 ---
-### Computers like many operating systems
+Computers like many operating systems
 
-Crystal is [cross platform](https://crystal-lang.org/install/):
+
+[cross platform](https://crystal-lang.org/install/):
 - MacOs
 - Linux
 - FreeBSD
@@ -276,7 +293,7 @@ Crystal is [cross platform](https://crystal-lang.org/install/):
 
 ![bg right](img/food_buffet_pexels-photo-14048846.jpeg)
 
-Cross compilation ? [YES!](https://crystal-lang.org/reference/1.10/syntax_and_semantics/cross-compilation.html)
+And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_semantics/cross-compilation.html)
 
 <!-- _footer: "" -->
 
@@ -306,15 +323,15 @@ Cross compilation ? [YES!](https://crystal-lang.org/reference/1.10/syntax_and_se
 ---
 ![bg right 100%](img/crystal_mascot.webp)
 
+#### *A language for humans and computers*
+
 # Thanks
 
-## Andrea Manzini
+*Andrea Manzini*
 
-## *A language for humans and computers*
+**11/11/2023**
 
-#### 11/11/2023 
-### `DevFest Trento`
-
+`DevFest Trento`
 
 ---
 ## Photo Credits

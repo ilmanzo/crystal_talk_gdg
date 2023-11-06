@@ -149,7 +149,7 @@ HttpHello.start
 <!-- _footer: "" -->
 ---
 ### Humans like their program to not fail
-Or: avoid [the billion dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
+Or: prevent [the billion-dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 
 ```Crystal
 class Duck
@@ -313,11 +313,13 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 ---
 # "One" more thing
 
+- There's more to Crystal: find out at https://www.crystal-lang.org
+
 - Crystal is built on openSUSE's [Open Build Service](https://build.opensuse.org/package/show/devel:languages:crystal/crystal)
 
-- Shameless plug: [Crystal koans](https://github.com/ilmanzo/crystal-koans)
+- Shameless plug: [Crystal koans](https://github.com/ilmanzo/crystal-koans) 
 
-- check out also [Nim Italia](https://nim-italia.github.io/)
+- check out also [Nim Italia](https://nim-italia.github.io/) 
 
 
 ---
@@ -337,7 +339,7 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 ## Photo Credits
 
 - Slide 3: [Ann H](https://www.pexels.com/@ann-h-45017/)
-- Slide 19: [Jonathan Borba](https://www.pexels.com/@jonathanborba/)
+- Slide 21: [Jonathan Borba](https://www.pexels.com/@jonathanborba/)
 
 
 

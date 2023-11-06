@@ -107,17 +107,19 @@ end
 <!-- _footer: "from *Refactoring: Improving the Design of Existing Code, 1999.*" -->
 
 ---
+#### Clean Code focuses on problem, not on solution
 
 *"**Clean Code** tells a story of the problem it solves. If your namings contain a lot of technical jargon, then it’s probably focusing on HOW. Clean Code focuses on WHAT."*
 
-#### Clean Code focuses on problem, not on solution
 
 from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
 
 ---
+#### Clean Code focuses on problem, not on solution
 
 *"Technical names such as DTOs, flags, and records are all related to specific solutions on the computer. They are code smells telling that your code focuses on a solution space. Instead, you should write code that speaks about the problem."*
 
+from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
 
 ---
 ## 
@@ -149,7 +151,7 @@ HttpHello.start
 <!-- _footer: "" -->
 ---
 ### Humans like their program to not fail
-Or: prevent [the billion-dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
+Or: how to prevent [the billion-dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 
 ```Crystal
 class Duck
@@ -174,13 +176,13 @@ Error: undefined method 'quack' for Nil (compile-time type is (Duck | Nil))
 ```Crystal
 struct Nil
   def quack
-    puts "shhh 🤫"
+    puts "sshhh 🤫"
   end
 end
 ```
 ```bash
 $ crystal duck.cr
-shhh 🤫
+sshhh 🤫
 ```
 *Duck typing + monkey patching* (like in Ruby)
 
@@ -230,7 +232,7 @@ $ /usr/bin/time -v ruby fibonacci.rb
 ---
 ## low resource usage
 ```crystal
-def fibonacci(n)
+def fibonacci(n : UInt32)
   return n if n < 2
   fibonacci(n - 1) + fibonacci(n - 2)
 end

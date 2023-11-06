@@ -128,7 +128,7 @@ from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
 
 
 ---
-#### Batteries included
+#### Human likes *batteries included* 🔋🔋
 ```crystal
 require "http/server"
 
@@ -207,7 +207,7 @@ Computer like native code 🤖
   - easy to deploy
 
 ---
-### performance
+### performance 🚀
 ```ruby
 def fibonacci(n)
   return n if n < 2
@@ -230,7 +230,7 @@ $ /usr/bin/time -v ruby fibonacci.rb
 ```
 <!-- _footer: "" -->
 ---
-## low resource usage
+## low resource usage 🪶
 ```crystal
 def fibonacci(n : UInt32)
   return n if n < 2
@@ -251,7 +251,7 @@ puts fibonacci(47)
 ```
 <!-- _footer: "" -->
 ---
-### Go, Crystal
+### Go, Crystal 🏁
 
 ```bash
 $ hyperfine fibonacci_*
@@ -279,7 +279,7 @@ $ ls -lh fibonacci_*
 see also [benchmarks I](https://github.com/kostya/crystal-benchmarks-game) - [benchmarks II](https://ptimofeev.com/go-vs-crystal-perfomance/)
 
 
-Note: **Distrust benchmarks!**
+Important Note: **Distrust benchmarks!**
 
 ---
 Computers like many operating systems
@@ -321,7 +321,7 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 
 - Shameless plug: [Crystal koans](https://github.com/ilmanzo/crystal-koans) 
 
-- check out also [Nim Italia](https://nim-italia.github.io/) 
+- If you like languages, check out also [Nim Italia](https://nim-italia.github.io/) 
 
 
 ---
@@ -342,6 +342,3 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 
 - Slide 3: [Ann H](https://www.pexels.com/@ann-h-45017/)
 - Slide 21: [Jonathan Borba](https://www.pexels.com/@jonathanborba/)
-
-
-

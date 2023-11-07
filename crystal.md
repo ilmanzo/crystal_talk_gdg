@@ -22,10 +22,10 @@ class: lead
 ---
 <!-- paginate: true -->
 
-## Short bio 
+## Andrea Manzini
 
-- Who am I ? ➡️ https://ilmanzo.github.io 
-- What do I do ? ⬇️
+- Who ? ➡️ https://ilmanzo.github.io 
+- What ? ⬇️
 
 Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 
@@ -52,9 +52,10 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 - No *bureaucracy*
 
 ---
-#### task: print 'Hello' 3 times
+#### once upon a C  ... 
 
-once upon a C  ...
+task: print 'Hello' 3 times
+
 
 ```C
 int i = 0
@@ -150,7 +151,7 @@ HttpHello.start
 ```
 <!-- _footer: "" -->
 ---
-### Humans like their program to not fail
+#### Humans like their program to not randomly fail
 Or: how to prevent [the billion-dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 
 ```Crystal
@@ -200,7 +201,8 @@ sshhh 🤫
 ---
 ## A language for computers
 
-Computer like native code 🤖
+`Computers like native code` 🤖
+
   - performant execution
   - low memory footprint
   - cross-platform/os
@@ -270,6 +272,7 @@ Summary
 ```    
 
 ---
+#### What about binary size ?
 
 ```bash
 $ ls -lh fibonacci_*
@@ -279,11 +282,10 @@ $ ls -lh fibonacci_*
 see also [benchmarks I](https://github.com/kostya/crystal-benchmarks-game) - [benchmarks II](https://ptimofeev.com/go-vs-crystal-perfomance/)
 
 
-Important Note: **Distrust benchmarks!**
+Most Important Note: **Distrust benchmarks!**
 
 ---
 Computers like many operating systems
-
 
 [cross platform](https://crystal-lang.org/install/):
 - MacOs
@@ -321,15 +323,15 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 
 - Shameless plug: [Crystal koans](https://github.com/ilmanzo/crystal-koans) 
 
-- If you like languages, check out also [Nim Italia](https://nim-italia.github.io/) 
+- If you like new languages, check out also [Nim Italia](https://nim-italia.github.io/) 
 
 
 ---
 ![bg right 100%](img/crystal_mascot.webp)
 
-#### *A language for humans and computers*
-
 # Thanks
+
+#### *A language for humans and computers*
 
 *Andrea Manzini*
 

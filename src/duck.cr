@@ -4,7 +4,7 @@ class Duck
   end
 end
 
-if rand(3) > 1
+if rand(2) >= 1  # flip a coin
   duck = Duck.new
 end
 

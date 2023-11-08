@@ -161,7 +161,7 @@ class Duck
   end
 end
 
-if rand(3) > 1
+if rand(2) >= 1 # Flip a coin
   duck = Duck.new
 end
 
@@ -282,7 +282,7 @@ $ ls -lh fibonacci_*
 see also [benchmarks I](https://github.com/kostya/crystal-benchmarks-game) - [benchmarks II](https://ptimofeev.com/go-vs-crystal-perfomance/)
 
 
-Most Important Note: **Distrust benchmarks!**
+Most Important Note: **Distrust benchmarks!** 👈
 
 ---
 Computers like many operating systems
@@ -304,16 +304,14 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 ---
 # Some extras
 
-- "Go style" Human friendly [concurrency](https://crystal-lang.org/reference/latest/guides/concurrency.html) via CSP
+- "Go style" Human friendly [concurrency](https://crystal-lang.org/reference/latest/guides/concurrency.html) via [CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes)
 - Code [documentation](https://crystal-lang.org/reference/latest/syntax_and_semantics/documenting_code.html) generation
 - Integrated [test](https://crystal-lang.org/reference/latest/guides/testing.html) framework
 - Metaprogramming via [macros](https://crystal-lang.org/reference/latest/syntax_and_semantics/macros/index.html)
-- Shards: dependency manager
-- C-binding without tears
-- an extensive, modern standard library
+- [Shards](https://crystal-lang.org/reference/1.10/man/shards/index.html): dependency manager
+- C-binding [without tears](https://crystal-lang.org/reference/1.10/syntax_and_semantics/c_bindings/index.html)
+- An extensive, modern [standard library](https://crystal-lang.org/api/1.10.1/)
  
-
-
 ---
 # "One" more thing
 
@@ -340,7 +338,11 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 `DevFest Trento`
 
 ---
-## Photo Credits
+These slides are available on `@ilmanzo` GitHub
+https://github.com/ilmanzo
+
+
+Photo Credits:
 
 - Slide 3: [Ann H](https://www.pexels.com/@ann-h-45017/)
 - Slide 21: [Jonathan Borba](https://www.pexels.com/@jonathanborba/)

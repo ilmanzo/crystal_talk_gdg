@@ -52,10 +52,9 @@ Software Engineer + Package Maintainer @ [SUSE](www.suse.com)
 - No *bureaucracy*
 
 ---
-#### once upon a C  ... 
-
 task: print 'Hello' 3 times
 
+#### once upon a C  ... 
 
 ```C
 int i = 0
@@ -100,12 +99,16 @@ end
 ```
 
 ---
-##
+### What's Clean code ?
 
-![bg 80%](img/martin_fowler.png)
+1. Clean code solves the problem
+2. Clean code is like a well-written prose
+3. Clean code is simple
+4. Clean code is easy to improve
+5. Clean code is tested
+6. Clean code focuses on problem, not on solution
 
-
-<!-- _footer: "from *Refactoring: Improving the Design of Existing Code, 1999.*" -->
+*from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka*
 
 ---
 #### Clean Code focuses on problem, not on solution
@@ -123,10 +126,65 @@ from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
 from "[Craft Better Software](https://craftbettersoftware.com/)" by Daniel Moka
 
 ---
-## 
+![bg center 70%](img/clean_code_solution.webp)
+
+---
 
 ![bg center 70%](img/daniel_moka_tweet.jpg)
 
+---
+
+![bg 80%](img/martin_fowler.png)
+
+<!-- _footer: "from *Refactoring: Improving the Design of Existing Code, 1999.*" -->
+
+---
+##### Humans like their program to not randomly fail
+preventing [the billion-dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
+
+![null1](img/null_pointer_exception1.jpeg)
+![null4](img/null_pointer_exception4.gif)
+![null2](img/null_pointer_exception2.jpeg)
+![null3](img/null_pointer_exception3.webp)
+
+---
+### Static type check on compile
+
+```Crystal
+class Duck
+  def quack
+    puts "🦆 quack!"
+  end
+end
+
+def hatch
+  Duck.new if rand(2) >= 1 # flip a coin
+end
+
+obj = hatch()
+obj.quack
+```
+```bash
+$ crystal quack.cr
+Error: undefined method 'quack' for Nil (compile-time type is (Duck | Nil))
+```
+<!-- _footer: "" -->
+---
+### Bureaucracy / boilerplate ? No thanks
+```Crystal
+struct Nil
+  def quack
+    puts "shhh 🤫"
+  end
+end
+```
+```bash
+$ crystal quack.cr
+sshhh 🤫
+$ crystal quack.cr
+🦆 quack!
+```
+*Duck typing + monkey patching* (like in Ruby)
 
 ---
 #### Human likes *batteries included* 🔋🔋
@@ -150,42 +208,6 @@ end
 HttpHello.start
 ```
 <!-- _footer: "" -->
----
-#### Humans like their program to not randomly fail
-Or: how to prevent [the billion-dollar mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
-
-```Crystal
-class Duck
-  def quack
-    puts "🦆 quack!"
-  end
-end
-
-if rand(2) >= 1 # Flip a coin
-  duck = Duck.new
-end
-
-duck.quack
-```
-```bash
-$ crystal duck.cr
-Error: undefined method 'quack' for Nil (compile-time type is (Duck | Nil))
-```
-<!-- _footer: "" -->
----
-## Bureaucracy ? No thanks
-```Crystal
-struct Nil
-  def quack
-    puts "sshhh 🤫"
-  end
-end
-```
-```bash
-$ crystal duck.cr
-sshhh 🤫
-```
-*Duck typing + monkey patching* (like in Ruby)
 
 ---
 # Summing up
@@ -196,7 +218,7 @@ sshhh 🤫
     - no need to write boilerplate types
     - duck typing and monkey patching
 
-- The community (checkout [CrystalConf!](https://crystal-lang.org/events/2023-crystal-berlin/))
+- Awesome community (checkout [CrystalConf!](https://crystal-lang.org/events/2023-crystal-berlin/))
 
 ---
 ## A language for computers
@@ -213,7 +235,7 @@ sshhh 🤫
 ```ruby
 def fibonacci(n)
   return n if n < 2
-  fibonacci(n - 1) + fibonacci(n - 2)
+  fibonacci(n-1) + fibonacci(n-2)
 end
 
 puts fibonacci(47)
@@ -236,7 +258,7 @@ $ /usr/bin/time -v ruby fibonacci.rb
 ```crystal
 def fibonacci(n : UInt32)
   return n if n < 2
-  fibonacci(n - 1) + fibonacci(n - 2)
+  fibonacci(n-1) + fibonacci(n-2)
 end
 
 puts fibonacci(47)
@@ -252,6 +274,27 @@ puts fibonacci(47)
         Minor (reclaiming a frame) page faults: 296        
 ```
 <!-- _footer: "" -->
+---
+#### Let's try with Go 
+
+```Go
+package main
+
+import "fmt"
+
+func fibonacci(n uint32) uint32 {
+  if n < 2 {
+    return n
+  }
+  return fibonacci(n-1) + fibonacci(n-2)
+}
+
+func main() {
+  fmt.Println(fibonacci(47))
+}
+```
+
+
 ---
 ### Go, Crystal 🏁
 
@@ -309,11 +352,11 @@ And [cross compilation](https://crystal-lang.org/reference/1.10/syntax_and_seman
 - Integrated [test](https://crystal-lang.org/reference/latest/guides/testing.html) framework
 - Metaprogramming via [macros](https://crystal-lang.org/reference/latest/syntax_and_semantics/macros/index.html)
 - [Shards](https://crystal-lang.org/reference/1.10/man/shards/index.html): dependency manager
-- C-binding [without tears](https://crystal-lang.org/reference/1.10/syntax_and_semantics/c_bindings/index.html)
 - An extensive, modern [standard library](https://crystal-lang.org/api/1.10.1/)
+- C-binding [without tears](https://crystal-lang.org/reference/1.10/syntax_and_semantics/c_bindings/index.html)
  
 ---
-# "One" more thing
+## "One" more thing
 
 - There's more to Crystal: find out at https://www.crystal-lang.org
 
@@ -345,4 +388,7 @@ https://github.com/ilmanzo
 Photo Credits:
 
 - Slide 3: [Ann H](https://www.pexels.com/@ann-h-45017/)
-- Slide 21: [Jonathan Borba](https://www.pexels.com/@jonathanborba/)
+- Slide 25: [Jonathan Borba](https://www.pexels.com/@jonathanborba/)
+
+
+## Q/A Time 

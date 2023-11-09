@@ -1,17 +1,18 @@
-struct Nil
-  def quack
-    puts "shhh 🤫"
-  end
-end
-
 class Duck
   def quack
     puts "🦆 quack!"
   end
 end
 
-if rand(3) > 1
-  duck = Duck.new
+struct Nil
+  def quack
+    puts "shhh 🤫"
+  end
 end
 
-duck.quack
+def hatch
+  Duck.new if rand(2) >= 1 # flip a coin
+end
+
+obj = hatch()
+obj.quack

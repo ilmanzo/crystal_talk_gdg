@@ -325,7 +325,7 @@ $ ls -lh fibonacci_*
 see also [benchmarks I](https://github.com/kostya/crystal-benchmarks-game) - [benchmarks II](https://ptimofeev.com/go-vs-crystal-perfomance/)
 
 
-Most Important Note: **Distrust benchmarks!** 👈
+Most Important Note: ❌ **Distrust benchmarks!** ❌
 
 ---
 Computers like many operating systems
